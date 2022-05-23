@@ -4,9 +4,9 @@ const routes = [{
     path: '/', // alias: '',路由別名
     alias: '/tracker',
     name: 'tracker',
-    // mata: {
-    //   title: 'IP Tracker' 
-    // },
+    meta: {
+      title: 'Vue3 Practice' 
+    },
     component: () => import( /* webpackChunkName: "tracker" */ '../components/Tracker/Layout.vue')
   },
   {
@@ -19,6 +19,11 @@ const routes = [{
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`
+  next()
 })
 
 export default router
