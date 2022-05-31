@@ -5,14 +5,17 @@ const routes = [{
     alias: '/tracker',
     name: 'tracker',
     meta: {
-      title: 'Vue3 Practice' 
+      title: 'Vue3 Practice - tracker'
     },
     component: () => import( /* webpackChunkName: "tracker" */ '../components/Tracker/Layout.vue')
   },
   {
     path: "/todo",
     name: "todo",
-    component: () => import( /* webpackChunkName: "todo" */ '../components/Todo/Layout.vue')
+    component: () => import( /* webpackChunkName: "todo" */ '../components/Todo/Layout.vue'),
+    meta: {
+      title: 'Vue3 Practice - todo'
+    },
   },
 ]
 

@@ -13,5 +13,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')({
+      strategy: 'class', // 只會重置使用form-{表單項目}的所有樣式
+    }),
+  ],
 }
